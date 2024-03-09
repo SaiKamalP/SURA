@@ -1,15 +1,9 @@
 #include<iostream>
-#include "utils.h"
 #include "NSGP2.cpp"
 #include "NSGP3.cpp"
 #include<fstream>
 using namespace std;
 int main(){
-    //gcd
-    cout<<gcd(3,15)<<endl;
-    cout<<gcd(15,6)<<endl;
-    cout<<gcd(100,73)<<endl;
-
     NSGP2 S1 = NSGP2(23,37);
     cout<<S1<<endl;
     S1.print_gap();

@@ -3,7 +3,7 @@
 #include<map>
 #include<exception>
 #include<string>
-#include "utils.h"
+#include<numeric>
 #include<iostream>
 #include "NSGP2.cpp"
 using namespace std;
@@ -26,16 +26,18 @@ class NSGP3{
         reduce_apery();
     }
     void reduce_apery(){
-        if(c>apery_a[c%a]){
+        if(c>=apery_a[c%a]){
             throw to_string(c)+" is not in gap(<"+to_string(a)+", "+to_string(b)+">).";
         }
         if(a%c==0){
             throw to_string(a)+" is not in gap(<"+to_string(c)+">).";
         }
         for(int i=1,c_i=c;i<a;i++,c_i+=c){
-            if((c-b*i)%a==0)s=i;
             if((c_i-b)%a==0 && c_i<=b)
             throw to_string(b)+" is not in gap(<"+to_string(a)+", "+to_string(c)+">).";
+        }
+        for(int i=1,c_i=c;i<a;i++,c_i+=c){
+            if((c-b*i)%a==0)s=i;
             for(int j=0;j<a;j++){
                 if(c_i+b*j<apery_a[(c_i+b*j)%a]){
                     Delta += (apery_a[(c_i+b*j)%a]-(c_i+b*j))/a;
