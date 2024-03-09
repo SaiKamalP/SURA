@@ -12,11 +12,11 @@ class NSGP2{
     int a,b,Frobenius,genus;
     vector<int> apery_a;
     NSGP2(int a1,int b1){
-        if(gcd(a,b)>1){
+        if(gcd(a1,b1)>1){
             throw (to_string(a)+" "+to_string(b)+" do not generate a numerical semigroup.");
         }
-        this->a = min(a,b);
-        this->b = max(a,b);
+        this->a = min(a1,b1);
+        this->b = max(a1,b1);
         apery_a=vector<int>(a,0);
         for(int i=1;i<a;i++){
             apery_a[(b*i)%a]=b*i;
