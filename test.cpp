@@ -20,11 +20,11 @@ int main(){
     // system(("python plot_gap.py "+f).c_str());
 
     
-    NSGP3 S2 = NSGP3(S1,186);
+    NSGP3 S2 = NSGP3(S1,248);
     cout<<S2<<endl;
     f = "test2.txt";
     fout.open(f,ios_base::ate);
-    fout<<S2.a<<endl;
+    fout<<S2.a<<" "<<S2.b<<endl;
     S1.print_gap(fout);
     fout<<S2.c<<endl;
     S2.print_gap(fout);
